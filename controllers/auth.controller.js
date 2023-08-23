@@ -70,11 +70,6 @@ const Login = async (req, res = response) => {
       msg: "Hable con el administrador",
     });
   }
-
-  return res.json({
-    ok: true,
-    msg: "login",
-  });
 };
 
 const renewToken  = async (req, res = response) =>{
@@ -84,8 +79,6 @@ const renewToken  = async (req, res = response) =>{
   const token = await generarJWT(uid);
 
   const usuario = await Usuario.findById(uid);
-
-  console.log(newToken);
   console.log(usuario);
 
 
